@@ -1,0 +1,71 @@
+name: cms-ars-3.1-high-docker-cis-overlay
+title: 
+maintainer: CMS InSpec Dev team
+copyright: 
+copyright_email: 
+license: Apache-2.0
+summary: 
+version: 0.1.0
+
+depends:
+- name: cis-docker-ce-profile 
+  path: ../cis-docker-ce-baseline
+  
+attributes:
+  - name: url
+    type: string
+    required: true
+    default: 'https://urltoarcherapp.org/'
+
+  - name: instancename
+    type: string
+    required: true
+    default: 'archerapp'
+
+  - name: user_domain
+    type: string
+    default: ''
+
+  - name: username
+    type: string
+    required: true
+    default: 'restapiuser'
+
+  - name: password
+    type: string
+    required: true
+    default: '<%=ENV['ARCHER_API_PASSWORD']%>'
+  
+  - name: ssl_verify
+    type: boolean
+    default: true  
+
+  - name: minimum_password_length
+    type: numeric
+    required: false
+    default: 15
+    description: 'The minimum number of characters for passwords.' 
+
+  - name: minimum_alpha_characters
+    type: numeric
+    required: false
+    default: 1
+    description: 'The minimum number of alpha characters that must be present in passwords.'
+
+  - name: password_change_interval
+    type: numeric
+    required: false
+    default: 60
+    description: 'The maximum lifetime for passwords in days.'
+
+  - name: previous_passwords_disallowed
+    type: numeric
+    required: false 
+    default: 12
+    description: 'The minimum number of password generations that are prohibited from reuse.'
+
+  - name: session_timeout
+    type: numeric
+    required: false
+    default: 15
+    description: 'The number of minutes at which point the operating system must initiate a session timeout.'
