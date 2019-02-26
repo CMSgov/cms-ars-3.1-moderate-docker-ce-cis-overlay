@@ -1,6 +1,6 @@
 # cms-ars-3.1-high-docker-cis-overlay
 
-InSpec profile overlay to validate the secure configuration of Docker CE against [CIS's](https://iase.disa.mil/stigs/Pages/index.aspx) Docker CE Benchmark 1.1.0 tailored for [CMS ARS 3.1](https://www.cms.gov/Research-Statistics-Data-and-Systems/CMS-Information-Technology/InformationSecurity/Info-Security-Library-Items/ARS-31-Publication.html) for CMS systems categorized as High.
+InSpec profile overlay to validate the secure configuration of Docker CE against [CIS's](https://www.cisecurity.org/cis-benchmarks/) Docker CE Benchmark 1.1.0 tailored for [CMS ARS 3.1](https://www.cms.gov/Research-Statistics-Data-and-Systems/CMS-Information-Technology/InformationSecurity/Info-Security-Library-Items/ARS-31-Publication.html) for CMS systems categorized as High.
 
 ## Getting Started  
 It is intended and recommended that InSpec and this profile overlay be run from a __"runner"__ host (such as a DevOps orchestration server, an administrative management system, or a developer's workstation/laptop) against the target remotely over __winrm__.
