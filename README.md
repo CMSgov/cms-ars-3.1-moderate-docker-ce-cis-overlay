@@ -1,6 +1,5 @@
 # cms-ars-3.1-high-docker-cis-overlay
 
-# cms-ars-3.1-high-microsoft-iis-8.5-server-stig-overlay
 InSpec profile overlay to validate the secure configuration of Microsoft IIS 8.5 Server against [DISA's](https://iase.disa.mil/stigs/Pages/index.aspx) Microsoft IIS 8.5 Server STIG Version 1 Release 6 tailored for [CMS ARS 3.1](https://www.cms.gov/Research-Statistics-Data-and-Systems/CMS-Information-Technology/InformationSecurity/Info-Security-Library-Items/ARS-31-Publication.html) for CMS systems categorized as High.
 
 ## Getting Started  
