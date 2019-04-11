@@ -1,4 +1,4 @@
-name: cms-ars-3.1-high-docker-cis-overlay
+name: cms-ars-3.1-moderate-docker-ce-cis-overlay
 title: .
 maintainer: CMS InSpec Dev team
 copyright: . 
@@ -8,8 +8,8 @@ summary: .
 version: 0.1.0
 
 depends:
-- name: cis-docker-ce-profile 
-  path: ../cis-docker-ce-baseline
+- name: docker-ce-cis-profile 
+  path: ../docker-ce-cis-baseline
   
 # attributes:
 #  - name: attr-name
