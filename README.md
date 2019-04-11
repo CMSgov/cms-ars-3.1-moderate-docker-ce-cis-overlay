@@ -16,7 +16,7 @@ When the __"runner"__ host uses this profile overlay for the first time, follow 
 mkdir profiles
 cd profiles
 git clone https://github.cms.gov/ispg/cms-ars-3.1-moderate-docker-ce-cis-overlay.git
-git clone https://github.com/mitre/cis-docker-ce-baseline.git
+git clone https://github.com/mitre/docker-ce-cis-baseline.git
 cd cms-ars-3.1-moderate-docker-ce-cis-overlay
 bundle install
 cd ..
@@ -26,7 +26,7 @@ inspec exec cms-ars-3.1-moderate-docker-ce-cis-overlay --target=ssh://<your_targ
 For every successive run, follow these steps to always have the latest version of this overlay and dependent profiles:
 
 ```
-cd profiles/cis-docker-ce-baseline
+cd profiles/docker-ce-cis-baseline
 git pull
 cd ../cms-ars-3.1-moderate-docker-ce-cis-overlay
 git pull
