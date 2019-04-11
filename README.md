@@ -1,4 +1,4 @@
-# cms-ars-3.1-moderate-docker-cis-overlay
+# cms-ars-3.1-moderate-docker-ce-cis-overlay
 
 InSpec profile overlay to validate the secure configuration of Docker CE against [CIS's](https://www.cisecurity.org/cis-benchmarks/) Docker CE Benchmark 1.1.0 tailored for [CMS ARS 3.1](https://www.cms.gov/Research-Statistics-Data-and-Systems/CMS-Information-Technology/InformationSecurity/Info-Security-Library-Items/ARS-31-Publication.html) for CMS systems categorized as Moderate.
 
