@@ -46,7 +46,7 @@ include_controls 'cis-docker-ce-profile' do
   end
 
   control 'M-1.3' do
-
+  tag "nist": ['SI-2', 'Rev_4']
   end
   
   control 'M-3.4' do
