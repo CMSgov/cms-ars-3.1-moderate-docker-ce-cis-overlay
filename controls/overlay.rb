@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-include_controls 'cis-docker-ce-profile' do
+include_controls 'docker-ce-cis-baseline' do
   control 'M-3.18' do
     tag "nist": ['AC-3', 'Rev_4']
   end

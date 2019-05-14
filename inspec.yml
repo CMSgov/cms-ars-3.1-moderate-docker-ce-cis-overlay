@@ -8,7 +8,7 @@ summary: .
 version: 0.1.0
 
 depends:
-- name: docker-ce-cis-profile 
+- name: docker-ce-cis-baseline
   path: ../docker-ce-cis-baseline
   
 # attributes:
