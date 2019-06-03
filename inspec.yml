@@ -10,9 +10,3 @@ version: 0.1.0
 depends:
 - name: docker-ce-cis-baseline
   path: ../docker-ce-cis-baseline
-  
-# attributes:
-#  - name: attr-name
-#    type: attr-type
-#    required:true/false
-#    default: 'attr-value'
