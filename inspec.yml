@@ -1,12 +1,13 @@
 name: cms-ars-3.1-moderate-docker-ce-cis-overlay
-title: .
+title: cms-ars-3.1-moderate-docker-ce-cis-overlay
 maintainer: CMS InSpec Dev team
-copyright: . 
-copyright_email: 
+copyright: (c) 2019 The MITRE Corporation
+copyright_email: inspec@mitre.org
 license: Apache-2.0
-summary: .
-version: 0.1.0
+summary: "CMS ARS 3.1 Moderate Overlay InSpec Validation Profile for Docker CE CIS"
+version: 1.1.0
+inspec_version: ">= 4.0"
 
 depends:
 - name: docker-ce-cis-baseline
-  path: ../docker-ce-cis-baseline
+  url: https://github.com/mitre/docker-ce-cis-baseline/archive/master.tar.gz
