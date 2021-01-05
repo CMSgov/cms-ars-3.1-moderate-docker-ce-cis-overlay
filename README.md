@@ -7,54 +7,74 @@ It is intended and recommended that InSpec and this profile overlay be run from 
 
 __For the best security of the runner, always install on the runner the _latest version_ of InSpec and supporting Ruby language components.__ 
 
-Latest versions and installation options are available at the [InSpec](http://inspec.io/) site.
+The latest versions and installation options are available at the [InSpec](http://inspec.io/) site.
 
 Git is required to download the latest InSpec profiles using the instructions below. Git can be downloaded from the [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) site. 
 
-## Running This Overlay
+## Running This Overlay Directly from Github
+
+```
+# How to run
+inspec exec https://github.com/CMSgov/cms-ars-3.1-moderate-docker-ce-cis-overlay/archive/master.tar.gz --target=ssh://<your_target_host_name_or_ip_address> --user=<target_account_with_administrative_privileges> --password=<password_for_target_account> --reporter=cli json:<path_to_your_output_file/name_of_your_output_file.json>
+```
+
+### Different Run Options
+
+  [Full exec options](https://docs.chef.io/inspec/cli/#options-3)
+
+## Running This Overlay from a local Archive copy 
+
+If your runner is not always expected to have direct access to GitHub, use the following steps to create an archive bundle of this overlay and all of its dependent tests:
+
+(Git is required to clone the InSpec profile using the instructions below. Git can be downloaded from the [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) site.)
+
 When the __"runner"__ host uses this profile overlay for the first time, follow these steps: 
 
 ```
 mkdir profiles
 cd profiles
 git clone https://github.com/CMSgov/cms-ars-3.1-moderate-docker-ce-cis-overlay.git
-git clone https://github.com/mitre/docker-ce-cis-baseline.git
-cd cms-ars-3.1-moderate-docker-ce-cis-overlay
-bundle install
-cd ..
-inspec exec cms-ars-3.1-moderate-docker-ce-cis-overlay --target=ssh://<your_target_host_name_or_ip_address> --user=<target_account_with_administrative_privileges> --password=<password_for_target_account> --reporter=cli json:<path_to_your_output_file/name_of_your_output_file.json> 
+inspec archive cms-ars-3.1-moderate-docker-ce-cis-overlay
+inspec exec <name of generated archive> --target=ssh://<your_target_host_name_or_ip_address> --user=<target_account_with_administrative_privileges> --password=<password_for_target_account> --reporter=cli json:<path_to_your_output_file/name_of_your_output_file.json>
 ```
 
 For every successive run, follow these steps to always have the latest version of this overlay and dependent profiles:
 
 ```
-cd profiles/docker-ce-cis-baseline
+cd cms-ars-3.1-moderate-docker-ce-cis-overlay
 git pull
-cd ../cms-ars-3.1-moderate-docker-ce-cis-overlay
-git pull
-bundle install
 cd ..
-inspec exec cms-ars-3.1-moderate-docker-ce-cis-overlay --target=ssh://<your_target_host_name_or_ip_address> --user=<target_account_with_administrative_privileges> --password=<password_for_target_account> --reporter=cli json:<path_to_your_output_file/name_of_your_output_file.json> 
+inspec archive cms-ars-3.1-moderate-docker-ce-cis-overlay --overwrite
+inspec exec <name of generated archive> --target=ssh://<your_target_host_name_or_ip_address> --user=<target_account_with_administrative_privileges> --password=<password_for_target_account> --reporter=cli json:<path_to_your_output_file/name_of_your_output_file.json>
 ```
 
-## Viewing the JSON Results
+## Using Heimdall for Viewing the JSON Results
 
-The JSON results output file can be loaded into __[heimdall-lite](https://mitre.github.io/heimdall-lite/)__ for a user-interactive, graphical view of the InSpec results. 
+The JSON results output file can be loaded into __[heimdall-lite](https://heimdall-lite.mitre.org/)__ for a user-interactive, graphical view of the InSpec results. 
 
 The JSON InSpec results file may also be loaded into a __[full heimdall server](https://github.com/mitre/heimdall)__, allowing for additional functionality such as to store and compare multiple profile runs.
 
 ## Authors
-* Eugene Aronne
-* Danny Haynes
+* Eugene Aronne - [ejaronne](https://github.com/ejaronne)
+* Danny Haynes - [djhaynes](https://github.com/djhaynes)
 
 ## Special Thanks
-* Mohamed El-Sharkawi
-* Alicia Sturtevant
+* Mohamed El-Sharkawi - [HackerShark](https://github.com/HackerShark)
+* Alicia Sturtevant - [asturtevant](https://github.com/asturtevant)
+* Shivani Karikar - [karikarshivani](https://github.com/karikarshivani)
 
-## Getting Help
+## Contributing and Getting Help
 To report a bug or feature request, please open an [issue](https://github.com/CMSgov/cms-ars-3.1-moderate-docker-ce-cis-overlay/issues/new).
-## License
-This is licensed under the [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0) license. 
+
+### NOTICE
+
+© 2018-2020 The MITRE Corporation.
+
+Approved for Public Release; Distribution Unlimited. Case Number 18-3678.
+
+### NOTICE 
+
+MITRE hereby grants express written permission to use, reproduce, distribute, modify, and otherwise leverage this software to the extent permitted by the licensed terms provided in the LICENSE.md file included with this project.
 
 ### NOTICE  
 
@@ -64,7 +84,6 @@ No other use other than that granted to the U. S. Government, or to those acting
 
 For further information, please contact The MITRE Corporation, Contracts Management Office, 7515 Colshire Drive, McLean, VA  22102-7539, (703) 983-6000.
 
-### NOTICE
+### NOTICE 
 
-* This project is dual-licensed under the terms of the Apache license 2.0 (apache-2.0)
-* This project is dual-licensed under the terms of the Creative Commons Attribution Share Alike 4.0 (cc-by-sa-4.0)
+CIS Benchmarks are published by the Center for Internet Security (CIS), see: https://www.cisecurity.org/.
